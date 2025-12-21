@@ -52,7 +52,7 @@ extends CharacterBody3D
 @export var view_bobbing : bool = true
 @export var jump_animation : bool = true
 
-
+# label stuff
 @export_group("UI")
 @export var INTERACTION_LABEL: Label
 
