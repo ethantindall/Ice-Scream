@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=21 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://23ww1al15aam" path="res://addons/fpc/character.gd" id="1_0t4e8"]
+[ext_resource type="Script" uid="uid://mgwhqvyqxv1j" path="res://addons/fpc/ray_cast_3d.gd" id="3_bupmj"]
 [ext_resource type="Script" uid="uid://d3rb1dsvv7q2q" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
@@ -424,6 +425,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_qeg5r")
 }
 speed_scale = 4.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, -0.00963998, 0)
+target_position = Vector3(1, 0, 1)
+collision_mask = 65535
+debug_shape_thickness = 5
+script = ExtResource("3_bupmj")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3

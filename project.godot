@@ -33,6 +33,7 @@ import/blender/enabled=false
 cameras=""
 player=""
 gate=""
+interactable=""
 
 [input]
 

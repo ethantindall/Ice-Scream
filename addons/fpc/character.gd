@@ -3,12 +3,13 @@ extends CharacterBody3D
 # TODO: Add descriptions for each value
 
 @export_category("Character")
-@export var base_speed : float = 3.0
-@export var sprint_speed : float = 6.0
+@export var base_speed : float = 10
+@export var sprint_speed : float = 15
 @export var crouch_speed : float = 1.0
 
 @export var acceleration : float = 10.0
 @export var jump_velocity : float = 4.5
+@export var mouse_sensitivity : float = 0.1
 @export var immobile : bool = false
 @export_file var default_reticle
 
@@ -30,8 +31,8 @@ extends CharacterBody3D
 @export var FORWARD : String = "ui_up"
 @export var BACKWARD : String = "ui_down"
 @export var PAUSE : String = "ui_cancel"
-@export var CROUCH : String = "ui_crouch"
-@export var SPRINT : String = "ui_sprint"
+@export var CROUCH : String = "ui_select"
+@export var SPRINT : String = "ui_focus_next"
 
 # Uncomment if you want full controller support
 #@export var LOOK_LEFT : String
@@ -52,11 +53,6 @@ extends CharacterBody3D
 @export var view_bobbing : bool = true
 @export var jump_animation : bool = true
 
-# label stuff
-@export_group("UI")
-@export var INTERACTION_LABEL: Label
-
-
 # Member variables
 var speed : float = base_speed
 var current_speed : float = 0.0
@@ -72,27 +68,16 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 
 
 func _ready():
-	# Register camera for global updates
-	CAMERA.add_to_group("cameras")
-
-	# Apply global camera settings
-	CAMERA.far = GameSettings.render_distance
-	CAMERA.fov = GameSettings.base_fov
-
-	# React to runtime FOV changes (settings menu, etc.)
-	GameSettings.fov_changed.connect(
-		func(value):
-			CAMERA.fov = value
-	)
-
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	# Set the camera rotation to whatever initial_facing_direction is
 	if initial_facing_direction:
-		HEAD.set_rotation_degrees(initial_facing_direction)
+		HEAD.set_rotation_degrees(initial_facing_direction) # I don't want to be calling this function if the vector is zero
 	
 	if default_reticle:
 		change_reticle(default_reticle)
 	
+	# Reset the camera position
 	HEADBOB_ANIMATION.play("RESET")
 	JUMP_ANIMATION.play("RESET")
 	CROUCH_ANIMATION.play("RESET")
@@ -258,12 +243,10 @@ func enter_sprint_state():
 
 
 func update_camera_fov():
-	var target_fov := GameSettings.base_fov
-
 	if state == "sprinting":
-		target_fov += GameSettings.sprint_fov_bonus
-
-	CAMERA.fov = lerp(CAMERA.fov, target_fov, 0.3)
+		CAMERA.fov = lerp(CAMERA.fov, 85.0, 0.3)
+	else:
+		CAMERA.fov = lerp(CAMERA.fov, 75.0, 0.3)
 
 
 func headbob_animation(moving):
@@ -315,6 +298,5 @@ func _process(delta):
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		var sens := GameSettings.mouse_sensitivity
-		HEAD.rotation_degrees.y -= event.relative.x * sens
-		HEAD.rotation_degrees.x -= event.relative.y * sens
+		HEAD.rotation_degrees.y -= event.relative.x * mouse_sensitivity
+		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity

@@ -4,160 +4,53 @@
 [ext_resource type="Texture2D" uid="uid://b11jn7wcwo5n" path="res://Assets/texture/asphalt_road_2.jpg" id="2_vcvay"]
 [ext_resource type="Texture2D" uid="uid://b6kki5bhl2mwq" path="res://Assets/texture/grass.jpg" id="3_fiidc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl46g"]
-albedo_texture = ExtResource("1_s7iof")
-uv1_scale = Vector3(1000, 1000, 1000)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ysop"]
-albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
-albedo_texture = ExtResource("1_s7iof")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3dkj"]
-albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usytr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7iof"]
 albedo_texture = ExtResource("2_vcvay")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1pdl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcvay"]
 albedo_color = Color(0.54099, 0.54099, 0.54099, 1)
 albedo_texture = ExtResource("3_fiidc")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3jfv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiidc"]
 albedo_color = Color(0, 0.411765, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qrny"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl46g"]
 albedo_color = Color(0, 0.411765, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e77be"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ysop"]
 albedo_color = Color(0.541176, 0.541176, 0.541176, 1)
 albedo_texture = ExtResource("3_fiidc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3dkj"]
+albedo_texture = ExtResource("1_s7iof")
+uv1_scale = Vector3(1000, 1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usytr"]
+albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
+albedo_texture = ExtResource("1_s7iof")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1pdl"]
+albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="Sidewalk" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-use_collision = true
-size = Vector3(1000, 0.1, 1000)
-material = SubResource("StandardMaterial3D_rl46g")
-metadata/_edit_lock_ = true
-
-[node name="Roundabout1" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 404, 0, 401)
-operation = 2
-radius = 13.0
-sides = 24
-material = SubResource("StandardMaterial3D_6ysop")
-
-[node name="Road1" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 238, 0, 401)
-operation = 2
-size = Vector3(318, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road2" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 78, 0, 343.499)
-operation = 2
-size = Vector3(304.997, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road3" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.5, 0, 292)
-operation = 2
-size = Vector3(177, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road4" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 258, 0, 295.5)
-operation = 2
-size = Vector3(201, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road5" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.5, 0, 196)
-operation = 2
-size = Vector3(283, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road6" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 365, 0, 248.406)
-operation = 2
-size = Vector3(114.811, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Roundabout2" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 365.087, 0, 312.71)
-operation = 2
-radius = 13.0
-sides = 24
-material = SubResource("StandardMaterial3D_6ysop")
-
-[node name="Road7" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 238, 0, 138.406)
-operation = 2
-size = Vector3(114.811, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road8" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, 76)
-operation = 2
-size = Vector3(708, 2, 19)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road9" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 346, 0, 4.5339)
-operation = 2
-size = Vector3(105, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road12" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 102, 0, 73.9765)
-operation = 2
-size = Vector3(243.669, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road13" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.544, 0, -43)
-operation = 2
-size = Vector3(247.087, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Road17" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 0, 12.811)
-operation = 2
-size = Vector3(116, 2, 10)
-material = SubResource("StandardMaterial3D_x3dkj")
-
-[node name="Roundabout3" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -46)
-operation = 2
-radius = 13.0
-sides = 24
-material = SubResource("StandardMaterial3D_6ysop")
-
-[node name="Roundabout4" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 347, 0, 75)
-operation = 2
-radius = 27.0
-sides = 24
-material = SubResource("StandardMaterial3D_6ysop")
-
 [node name="Road" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(1000, 1, 1000)
-material = SubResource("StandardMaterial3D_usytr")
+material = SubResource("StandardMaterial3D_s7iof")
 metadata/_edit_lock_ = true
 
 [node name="Grass" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 use_collision = true
 size = Vector3(1000, 0.2, 1000)
-material = SubResource("StandardMaterial3D_k1pdl")
+material = SubResource("StandardMaterial3D_vcvay")
 metadata/_edit_lock_ = true
 
 [node name="Roundabout1" type="CSGCylinder3D" parent="CSGCombiner3D/Grass"]
@@ -165,553 +58,671 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 404, 0, 401)
 operation = 2
 radius = 16.0
 sides = 24
-material = SubResource("StandardMaterial3D_u3jfv")
+material = SubResource("StandardMaterial3D_fiidc")
 
 [node name="Road1" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 238, 0, 401)
 operation = 2
 size = Vector3(318, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road2" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 78, 0, 343.5)
 operation = 2
 size = Vector3(311, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road3" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169, 0, 292)
 operation = 2
 size = Vector3(182, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road4" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 258, 0, 295.5)
 operation = 2
 size = Vector3(201, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road5" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.5, 0, 196)
 operation = 2
 size = Vector3(281, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road6" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 365, 0, 246.888)
 operation = 2
 size = Vector3(117.821, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Roundabout2" type="CSGCylinder3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 364.996, 0, 312.604)
 operation = 2
 radius = 16.0
 sides = 24
-material = SubResource("StandardMaterial3D_u3jfv")
+material = SubResource("StandardMaterial3D_fiidc")
 
 [node name="Road7" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 238, 0, 136.888)
 operation = 2
 size = Vector3(117.821, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road8" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.5, 0, 76)
 operation = 2
 size = Vector3(709, 2, 25)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road9" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 346, 0, 12.3917)
 operation = 2
 size = Vector3(126.814, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road12" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 102, 0, 72.3618)
 operation = 2
 size = Vector3(246.874, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road13" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.293, 0, -43)
 operation = 2
 size = Vector3(258.587, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Road17" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 0, 14.2988)
 operation = 2
 size = Vector3(119, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Roundabout3" type="CSGCylinder3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -46)
 operation = 2
 radius = 16.0
 sides = 24
-material = SubResource("StandardMaterial3D_u3jfv")
+material = SubResource("StandardMaterial3D_fiidc")
 
 [node name="Road18" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 405.017, 0, 383)
 operation = 2
 size = Vector3(10, 2, 16)
-material = SubResource("StandardMaterial3D_2qrny")
+material = SubResource("StandardMaterial3D_rl46g")
 
 [node name="Driveway2" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 423, -0.1, 405)
 operation = 2
 size = Vector3(20, 1, 8)
 
+[node name="Driveway76" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
+transform = Transform3D(-8.84149e-08, 0, 1, 0, 1, 0, -1, 0, -8.84149e-08, 429.5, -0.1, 398.002)
+operation = 2
+size = Vector3(11.1906, 1, 7)
+
 [node name="Driveway3" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 399, -0.1, 422)
 operation = 2
 size = Vector3(20, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway4" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 351.575, -0.1, 415.433)
 operation = 2
 size = Vector3(16.0621, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway5" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 307.96, -0.1, 420.402)
 operation = 2
 size = Vector3(26, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway6" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 261.967, -0.1, 417.542)
 operation = 2
 size = Vector3(20.2796, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway7" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 371.56, -0.1, 386.58)
 operation = 2
 size = Vector3(16.0621, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway8" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 335.404, -0.1, 386.58)
 operation = 2
 size = Vector3(16.0621, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway9" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 292.29, -0.1, 389.424)
 operation = 2
 size = Vector3(20.2796, 1, 11.1108)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway10" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 235.29, -0.1, 389.424)
 operation = 2
 size = Vector3(20.2796, 1, 11.1108)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway11" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 215.805, -0.1, 415.433)
 operation = 2
 size = Vector3(16.0621, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway12" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 167.491, -0.1, 415.433)
 operation = 2
 size = Vector3(16.0621, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway13" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 196.509, -0.1, 385.452)
 operation = 2
 size = Vector3(20, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Roundabout4" type="CSGCylinder3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 347, 0, 75)
 operation = 2
 radius = 30.0
 sides = 24
-material = SubResource("StandardMaterial3D_u3jfv")
+material = SubResource("StandardMaterial3D_fiidc")
 
 [node name="Driveway14" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 150.009, -0.1, 385.452)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway15" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 113.509, -0.1, 385.452)
 operation = 2
 size = Vector3(20, 1, 10)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway16" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 63.5094, -0.1, 424.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway17" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 63.5094, -0.1, 381.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway18" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 63.5094, -0.1, 326.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway19" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 63.5094, -0.1, 288.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway20" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 63.5094, -0.1, 246.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway21" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 62.4753, -0.1, 195.211)
 operation = 2
 size = Vector3(22, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway22" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 86.5094, -0.3, 153.952)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway23" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 76.5094, -0.3, 92.9522)
 operation = 2
 size = Vector3(20, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway24" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 272.29, -0.1, 336.424)
 operation = 2
 size = Vector3(20.2796, 1, 11.1108)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway25" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 274.29, -0.1, 283.424)
 operation = 2
 size = Vector3(20.2796, 1, 11.1108)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway26" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 280.345, -0.1, 207.424)
 operation = 2
 size = Vector3(20.2796, 1, 9)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway27" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 213.345, -0.1, 209.564)
 operation = 2
 size = Vector3(16, 1, 9)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway28" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 158.345, -0.1, 219.564)
 operation = 2
 size = Vector3(36, 1, 9)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway29" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 103.509, -0.1, 206.952)
 operation = 2
 size = Vector3(8, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway30" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 135.509, -0.1, 278.952)
 operation = 2
 size = Vector3(8, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway31" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 197.009, -0.1, 276.452)
 operation = 2
 size = Vector3(9, 1, 16)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway32" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 235.509, -0.1, 276.452)
 operation = 2
 size = Vector3(10, 1, 16)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway33" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 210.009, -0.1, 307.452)
 operation = 2
 size = Vector3(9, 1, 16)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway34" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 151.009, -0.1, 305.452)
 operation = 2
 size = Vector3(9, 1, 16)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway35" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 337.345, -0.1, 209.424)
 operation = 2
 size = Vector3(20.2796, 1, 9)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway36" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 377.345, -0.3, 221.424)
 operation = 2
 size = Vector3(20.2796, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway37" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 364.863, -0.1, 178.632)
 operation = 2
 size = Vector3(24, 1, 9)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway38" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 320.845, -0.1, 180.564)
 operation = 2
 size = Vector3(16, 1, 10)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway39" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 284.345, -0.1, 179.064)
 operation = 2
 size = Vector3(19, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway40" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 377.345, -0.3, 280.424)
 operation = 2
 size = Vector3(20.2796, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway41" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 380.514, -0.3, 325.202)
 operation = 2
 size = Vector3(22, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway42" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 341.514, -0.3, 312.202)
 operation = 2
 size = Vector3(22, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway43" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 350.345, -0.3, 263.424)
 operation = 2
 size = Vector3(20.2796, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway44" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 267.345, -0.1, 97.064)
 operation = 2
 size = Vector3(19, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway45" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 322.51, -0.1, 100.717)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway46" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 364.51, -0.1, 105.717)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway47" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 420.345, -0.1, 100.064)
 operation = 2
 size = Vector3(25, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway48" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 239.345, -0.1, -26.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
+
+[node name="Driveway77" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
+transform = Transform3D(-0.480545, 0, -0.87697, 0, 1, 0, 0.87697, 0, -0.480545, 304.025, -0.1, -26.436)
+operation = 2
+size = Vector3(28, 1, 11)
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway49" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 187.345, -0.1, -26.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway50" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 140.345, -0.1, -26.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway51" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 157.345, -0.1, -60.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway52" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 103.345, -0.1, -61.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway53" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 86.3453, -0.1, -21.436)
 operation = 2
 size = Vector3(24, 1, 7)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway54" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 86.3453, -0.1, 28.564)
 operation = 2
 size = Vector3(24, 1, 7)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway55" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 26.8453, -0.1, 50.564)
 operation = 2
 size = Vector3(15, 1, 7)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway56" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, 26.8453, -0.1, 1.06403)
 operation = 2
 size = Vector3(15, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway57" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 36.0462, -0.1, -46.32)
 operation = 2
 size = Vector3(18, 1, 10)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway58" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 27.8053, -0.0759431, -42.527)
 operation = 2
 size = Vector3(6, 1, 10)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway59" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(0.708832, 0, -0.705377, 0, 1, 0, 0.705377, 0, 0.708832, -5.04447, -0.1, -61.2233)
 operation = 2
 size = Vector3(25.1504, 1, 10)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway60" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, -4.66519, -0.1, -25.67)
 operation = 2
 size = Vector3(21.6655, 1, 7.79797)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway61" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, 1, -2.67529, -0.1, 25.7984)
 operation = 2
 size = Vector3(19.4158, 1, 7)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway64" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, -99.4443, -0.3, 95.0246)
 operation = 2
 size = Vector3(19.4158, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway65" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, -43.6116, -0.3, 95.0246)
 operation = 2
 size = Vector3(19.4158, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway62" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, -48.392, -0.1, 54.7467)
 operation = 2
 size = Vector3(19.4158, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway63" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, -104.229, -0.1, 54.7467)
 operation = 2
 size = Vector3(19.4158, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway66" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 8.37141, -0.3, 91.624)
 operation = 2
 size = Vector3(12.6146, 1, 8)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway67" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 144.28, -0.1, 51.8621)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway68" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 219.426, -0.1, 51.8621)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway69" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 270.67, -0.1, 57.7481)
 operation = 2
 size = Vector3(16.228, 1, 7.99274)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway70" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 311.17, -0.1, 54.6271)
 operation = 2
 size = Vector3(22.47, 1, 7.99274)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway71" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 219.772, -0.1, -60.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway72" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 264.356, -0.1, -60.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway73" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 318.557, -0.1, -60.436)
 operation = 2
 size = Vector3(28, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway74" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.775419, 0, -0.631448, 0, 1, 0, 0.631448, 0, -0.775419, 169.9, -0.3, 137.591)
 operation = 2
 size = Vector3(164.94, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Driveway75" type="CSGBox3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(-0.77405, 0, 0.633124, 0, 1, 0, -0.633124, 0, -0.77405, 169.9, -0.3, 137.591)
 operation = 2
 size = Vector3(164.94, 1, 11)
-material = SubResource("StandardMaterial3D_e77be")
+material = SubResource("StandardMaterial3D_6ysop")
 
 [node name="Roundabout5" type="CSGCylinder3D" parent="CSGCombiner3D/Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.037, 0, 136.484)
 operation = 2
 radius = 16.0
 sides = 24
-material = SubResource("StandardMaterial3D_u3jfv")
+material = SubResource("StandardMaterial3D_fiidc")
+
+[node name="Sidewalk" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+use_collision = true
+size = Vector3(1000, 0.1, 1000)
+material = SubResource("StandardMaterial3D_x3dkj")
+metadata/_edit_lock_ = true
+
+[node name="Roundabout1" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 404, 0, 401)
+operation = 2
+radius = 13.0
+sides = 24
+material = SubResource("StandardMaterial3D_usytr")
+
+[node name="Road1" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 238, 0, 401)
+operation = 2
+size = Vector3(318, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road2" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 78, 0, 343.499)
+operation = 2
+size = Vector3(304.997, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road3" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.5, 0, 292)
+operation = 2
+size = Vector3(177, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road4" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 258, 0, 295.5)
+operation = 2
+size = Vector3(201, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road5" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.5, 0, 196)
+operation = 2
+size = Vector3(283, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road6" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 365, 0, 248.406)
+operation = 2
+size = Vector3(114.811, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Roundabout2" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 365.087, 0, 312.71)
+operation = 2
+radius = 13.0
+sides = 24
+material = SubResource("StandardMaterial3D_usytr")
+
+[node name="Road7" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 238, 0, 138.406)
+operation = 2
+size = Vector3(114.811, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road8" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, 76)
+operation = 2
+size = Vector3(708, 2, 19)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road9" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 346, 0, 4.5339)
+operation = 2
+size = Vector3(105, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road12" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 102, 0, 73.9765)
+operation = 2
+size = Vector3(243.669, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road13" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.544, 0, -43)
+operation = 2
+size = Vector3(247.087, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Road17" type="CSGBox3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 0, 12.811)
+operation = 2
+size = Vector3(116, 2, 10)
+material = SubResource("StandardMaterial3D_k1pdl")
+
+[node name="Roundabout3" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -46)
+operation = 2
+radius = 13.0
+sides = 24
+material = SubResource("StandardMaterial3D_usytr")
+
+[node name="Roundabout4" type="CSGCylinder3D" parent="CSGCombiner3D/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 347, 0, 75)
+operation = 2
+radius = 27.0
+sides = 24
+material = SubResource("StandardMaterial3D_usytr")
