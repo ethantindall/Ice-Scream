@@ -195,6 +195,7 @@ light_color = Color(0.721498, 0.743548, 0.734792, 1)
 shadow_enabled = true
 
 [node name="PrivacyFence" type="Node3D" parent="."]
+visible = false
 
 [node name="20fences" parent="PrivacyFence" instance=ExtResource("4_e37sb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.145, 1.25506, 344.441)
@@ -445,17 +446,11 @@ transform = Transform3D(1.47337, -1.35247, 5.91182e-08, 0, -8.74228e-08, -2, 1.3
 [node name="WoodenFence2" parent="PrivacyFence" instance=ExtResource("26_7ssug")]
 transform = Transform3D(1.47337, -1.35247, 5.91182e-08, 0, -8.74228e-08, -2, 1.35247, 1.47337, -6.44033e-08, 426.257, 2.18, 370.097)
 
-[node name="WoodenFence3" parent="PrivacyFence" instance=ExtResource("27_4xox4")]
-transform = Transform3D(-1.50492, 1.31727, -5.75799e-08, -3.84855e-15, -8.74228e-08, -2, -1.31727, -1.50492, 6.57822e-08, 429.832, 2.18, 373.329)
-
 [node name="WoodenFence4" parent="PrivacyFence" instance=ExtResource("26_7ssug")]
 transform = Transform3D(1.47337, -1.35247, 5.91182e-08, 0, -8.74228e-08, -2, 1.35247, 1.47337, -6.44033e-08, 428.014, 2.18, 371.729)
 
 [node name="WoodenFence5" parent="PrivacyFence" instance=ExtResource("26_7ssug")]
 transform = Transform3D(0.109935, -1.99698, 8.72906e-08, 0, -8.74228e-08, -2, 1.99698, 0.109935, -4.80543e-09, 430.773, 2.18, 375.521)
-
-[node name="WoodenFence7" parent="PrivacyFence" instance=ExtResource("27_4xox4")]
-transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, 382.563, 2.18, 373.605)
 
 [node name="WoodenFence8" parent="PrivacyFence" instance=ExtResource("26_7ssug")]
 transform = Transform3D(2, 1.67038e-22, -7.30146e-30, 0, -8.74228e-08, -2, -1.67038e-22, 2, -8.74228e-08, 385.049, 2.18, 373.619)
@@ -1013,6 +1008,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 272.066, 1, 251.057)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.757, 1, 251.057)
 
 [node name="Road Signs" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Stopsign" parent="Road Signs" instance=ExtResource("10_286o7")]
@@ -1121,6 +1117,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 250.05
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 359.597, 0.149998, 201.346)
 
 [node name="PicketFences" type="Node3D" parent="."]
+visible = false
 
 [node name="PicketFence4" parent="PicketFences" instance=ExtResource("6_np7p1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.546, 0.299999, 118.991)
@@ -1216,6 +1213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87629, 0, -13.7491)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87629, 0, -18.3315)
 
 [node name="Houses" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Villa" parent="Houses" instance=ExtResource("2_km2bi")]
@@ -1450,6 +1448,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 301.13
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.33, 0.37008, 62.5665)
 
 [node name="Park items" type="Node3D" parent="."]
+visible = false
 
 [node name="Playground" parent="Park items" instance=ExtResource("10_t3ofs")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 172.981, 2.21534, 106.123)
@@ -1511,6 +1510,7 @@ transform = Transform3D(0.0163186, 0, 4.99997, 0, 5, 0, -4.99997, 0, 0.0163186, 
 visible = false
 
 [node name="Plants" type="Node3D" parent="."]
+visible = false
 
 [node name="Tree-02-3" parent="Plants" instance=ExtResource("14_i4yi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 386, 0, 384)
@@ -2552,6 +2552,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.657, 0.312481, 54.1218)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.4369, 0.312481, 22.8902)
 
 [node name="Mailboxes" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Mailbox1" parent="Mailboxes" instance=ExtResource("31_rlquh")]
@@ -2768,6 +2769,7 @@ transform = Transform3D(-0.6, 0, -0.000649257, 0, 0.6, 0, 0.000649257, 0, -0.6, 
 transform = Transform3D(-0.6, 0, -0.000649257, 0, 0.6, 0, 0.000649257, 0, -0.6, 285.458, 0, 204.583)
 
 [node name="Streetlight" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Streetlight2" parent="Streetlight" instance=ExtResource("30_5bx2d")]
@@ -2876,6 +2878,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.939, 0, 205.03)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.939, 0, 298.027)
 
 [node name="Trashcans" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="metalcan2" parent="Trashcans" instance=ExtResource("29_be6f2")]
@@ -3131,6 +3134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 398.783, 0.00934885, 404.854)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.76, 0.309348, 63.2796)
 
 [node name="Cars" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Car2" parent="Cars" instance=ExtResource("17_mxrpl")]
@@ -3257,6 +3261,7 @@ transform = Transform3D(-6.99382e-08, 0, -1.6, 0, 1.6, 0, 1.6, 0, -6.99382e-08, 
 transform = Transform3D(-6.11959e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.11959e-08, -6, 0, -28)
 
 [node name="Deadend" type="Node3D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Sofa" parent="Deadend" instance=ExtResource("22_exhny")]
@@ -3381,5 +3386,12 @@ metadata/_edit_lock_ = true
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ixsyw")
 
+[node name="Gate2" parent="." instance=ExtResource("27_4xox4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 382.635, 1.464, 372.917)
+
 [node name="Character" parent="." instance=ExtResource("37_tdyy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 415.297, -4.76837e-07, 401.626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 421.141, 9.53674e-07, 378.945)
+
+[node name="Gate" parent="." instance=ExtResource("27_4xox4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 419.879, 1.464, 374.204)
+locked = true

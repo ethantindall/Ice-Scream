@@ -3,8 +3,8 @@ extends CharacterBody3D
 # TODO: Add descriptions for each value
 
 @export_category("Character")
-@export var base_speed : float = 10
-@export var sprint_speed : float = 15
+@export var base_speed : float = 6
+@export var sprint_speed : float = 10
 @export var crouch_speed : float = 1.0
 
 @export var acceleration : float = 10.0
@@ -31,7 +31,7 @@ extends CharacterBody3D
 @export var FORWARD : String = "ui_up"
 @export var BACKWARD : String = "ui_down"
 @export var PAUSE : String = "ui_cancel"
-@export var CROUCH : String = "ui_select"
+@export var CROUCH : String = "ui_crouch"
 @export var SPRINT : String = "ui_focus_next"
 
 # Uncomment if you want full controller support

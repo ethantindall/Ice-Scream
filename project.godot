@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 GameSettings="*res://GameSettings.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 
+[editor]
+
+movie_writer/movie_file="/home/ethan/Documents/git/ice-scream/moviegodot.avi"
+movie_writer/fps=45
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
@@ -34,6 +39,7 @@ cameras=""
 player=""
 gate=""
 interactable=""
+pickup=""
 
 [input]
 
