@@ -384,7 +384,7 @@ MarginContainer/constants/margin_top = 10
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k4wwl"]
 
-[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH")]
+[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH") groups=["player"]]
 script = ExtResource("1_0t4e8")
 default_reticle = "uid://coqpusufa8a6k"
 HEAD = NodePath("Head")
@@ -428,10 +428,14 @@ speed_scale = 4.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, -0.00963998, 0)
-target_position = Vector3(1, 0, 1)
+target_position = Vector3(1.5, 0, 1.5)
 collision_mask = 65535
+collide_with_areas = true
 debug_shape_thickness = 5
 script = ExtResource("3_bupmj")
+
+[node name="ItemHolder" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.773488, -0.448159, -1.01878)
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -461,3 +465,43 @@ layout_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
 target_position = Vector3(0, 0.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InteractionLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = 128.5
+offset_right = 38.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoalLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 41.0
+offset_right = -52.0
+offset_bottom = 64.0
+grow_horizontal = 0
+text = "THIS IS A TEST:
+CURRENT OBJECTIVE:
+GET HOME ALIVE"
+horizontal_alignment = 2

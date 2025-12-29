@@ -25,14 +25,14 @@ extends CharacterBody3D
 
 @export_group("Controls")
 # We are using UI controls because they are built into Godot Engine so they can be used right away
-@export var JUMP : String = "ui_accept"
+@export var JUMP : String = "ui_jump"
 @export var LEFT : String = "ui_left"
 @export var RIGHT : String = "ui_right"
 @export var FORWARD : String = "ui_up"
 @export var BACKWARD : String = "ui_down"
 @export var PAUSE : String = "ui_cancel"
 @export var CROUCH : String = "ui_crouch"
-@export var SPRINT : String = "ui_focus_next"
+@export var SPRINT : String = "ui_sprint"
 
 # Uncomment if you want full controller support
 #@export var LOOK_LEFT : String

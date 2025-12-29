@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://ucob6wy0hg01"]
+[gd_scene load_steps=55 format=4 uid="uid://ucob6wy0hg01"]
 
 [ext_resource type="Material" uid="uid://cnht54hatwrkt" path="res://CRT_shader_material.tres" id="1_en5d1"]
 [ext_resource type="Texture2D" uid="uid://d1niqg2jvwe5c" path="res://Assets/texture/sidewalk.png" id="2_1ns3a"]
@@ -35,8 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://c1ul4doa3ke5j" path="res://Assets/statue/statue.tscn" id="32_74ai6"]
 [ext_resource type="PackedScene" uid="uid://4jh6hx3uv883" path="res://Assets/cars/car1/subaru2.tscn" id="32_nrbi5"]
 [ext_resource type="PackedScene" uid="uid://bye1pd1kfxhkp" path="res://Assets/plants/3hedges.tscn" id="36_tdyy1"]
-[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/character3D-2f9aa62bbb55e1ac17d277f5008d9df982168336/character.tscn" id="37_tdyy1"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="37_tdyy1"]
+[ext_resource type="PackedScene" uid="uid://c306f8ev3cytt" path="res://Assets/keys/keys.tscn" id="38_ixsyw"]
 [ext_resource type="PackedScene" uid="uid://bs07fs2gu4lvr" path="res://housetest.tscn" id="38_t30w2"]
+[ext_resource type="PackedScene" uid="uid://b3iuiqxcp1wsh" path="res://Assets/cardboard_box.tscn" id="39_ixsyw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5hk42"]
 sky_top_color = Color(0.231666, 0.476114, 0.627554, 1)
@@ -3381,6 +3383,8 @@ mesh = SubResource("ArrayMesh_t30w2")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 437, 1.19183, 386.164)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 15
+collision_mask = 15
 metadata/_edit_lock_ = true
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -3395,3 +3399,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 421.141, 9.53674e-07, 378.945
 [node name="Gate" parent="." instance=ExtResource("27_4xox4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 419.879, 1.464, 374.204)
 locked = true
+
+[node name="PickupItems" type="Node3D" parent="."]
+
+[node name="Keys" parent="PickupItems" instance=ExtResource("38_ixsyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420.184, 0.324499, 376.278)
+
+[node name="CardboardBox" parent="PickupItems" instance=ExtResource("39_ixsyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 423.686, 0.8, 376.671)
+
+[node name="CardboardBox2" parent="PickupItems" instance=ExtResource("39_ixsyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 414.049, 0.799999, 376.694)
+
+[node name="CardboardBox3" parent="PickupItems" instance=ExtResource("39_ixsyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.24, 0.800001, 380.353)
