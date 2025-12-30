@@ -6,9 +6,12 @@ extends RayCast3D
 var interactable_node: Node = null
 var pickup_node: Node3D = null
 var held_item: Node = null
-
+var is_hidden = false
 
 func _physics_process(delta: float):
+	if is_hidden:
+		return
+		
 	if is_colliding():
 		var collider = get_collider()
 
@@ -16,7 +19,7 @@ func _physics_process(delta: float):
 		if collider.is_in_group("interactable"):
 			# Doors etc. usually have a child collider
 			interactable_node = collider
-			if collider.get_parent() != null and collider.get_parent().has_method("toggle"):
+			if collider.get_parent() != null and not collider.is_in_group("pickup"):
 				interactable_node = collider.get_parent()
 
 			if interactable_node.has_method("get_display_text"):
@@ -41,10 +44,16 @@ func _physics_process(delta: float):
 
 func _input(event):
 	# LEFT CLICK — interact / pickup
+	print(interactable_node)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if interactable_node and interactable_node.has_method("toggle"):
 			interactable_node.toggle()
 
+		if interactable_node and interactable_node.has_method("hide_enter"):
+			interactable_node.hide_enter()
+			is_hidden = true
+			interaction_label.text = "Press E to exit"
+			
 		if pickup_node and pickup_node.has_method("pickup"):
 			pickup_node.pickup()
 			held_item = pickup_node

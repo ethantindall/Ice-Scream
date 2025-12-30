@@ -37,9 +37,10 @@ import/blender/enabled=false
 
 cameras=""
 player=""
-gate=""
 interactable=""
 pickup=""
+hide=""
+door=""
 
 [input]
 

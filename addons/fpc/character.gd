@@ -12,6 +12,7 @@ extends CharacterBody3D
 @export var mouse_sensitivity : float = 0.1
 @export var immobile : bool = false
 @export_file var default_reticle
+@export var air_control : float = 0.35  # 0 = no air control, 1 = full control
 
 @export var initial_facing_direction : Vector3 = Vector3.ZERO
 
@@ -65,6 +66,7 @@ var RETICLE : Control
 
 # Get the gravity from the project settings to be synced with RigidBody nodes
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") # Don't set this as a const, see the gravity section in _physics_process
+var is_hidden: bool = false
 
 
 func _ready():
@@ -154,23 +156,30 @@ func handle_jumping():
 func handle_movement(delta, input_dir):
 	var direction = input_dir.rotated(-HEAD.rotation.y)
 	direction = Vector3(direction.x, 0, direction.y)
-	move_and_slide()
-	
-	if in_air_momentum:
-		if is_on_floor():
-			if motion_smoothing:
-				velocity.x = lerp(velocity.x, direction.x * speed, acceleration * delta)
-				velocity.z = lerp(velocity.z, direction.z * speed, acceleration * delta)
-			else:
-				velocity.x = direction.x * speed
-				velocity.z = direction.z * speed
+
+	var accel := acceleration
+	var control := 1.0
+
+	if not is_on_floor():
+		control = air_control
+		accel *= air_control
+
+	if motion_smoothing:
+		velocity.x = lerp(
+			velocity.x,
+			direction.x * speed * control,
+			accel * delta
+		)
+		velocity.z = lerp(
+			velocity.z,
+			direction.z * speed * control,
+			accel * delta
+		)
 	else:
-		if motion_smoothing:
-			velocity.x = lerp(velocity.x, direction.x * speed, acceleration * delta)
-			velocity.z = lerp(velocity.z, direction.z * speed, acceleration * delta)
-		else:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+		velocity.x = direction.x * speed * control
+		velocity.z = direction.z * speed * control
+
+	move_and_slide()
 
 
 func handle_state(moving):
