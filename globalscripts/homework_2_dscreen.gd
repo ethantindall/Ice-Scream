@@ -35,8 +35,8 @@ func _input(event: InputEvent) -> void:
 
 func exit_homework():
 	# 1️⃣ Switch back to 3D scene
-	SceneManager.load_scene("res://scenes/3d_scene.tscn")
-	
+	#SceneManager.load_scene("res://scenes/3d_scene.tscn")
+	GoalManager.update_quest("Talk to mom.")
 	# 2️⃣ Re-enable player nodes
 	for player in get_tree().get_nodes_in_group("player"):
 		player.set_process(true)
@@ -47,7 +47,7 @@ func exit_homework():
 			canvas_layer.visible = true
 
 	# 3️⃣ Optional: unload the 2D homework scene
-	SceneManager.unload_scene("res://homework2dscreen.tscn")
+	SceneManager.unload_scene("res://2Dscenes/homework2dscreen.tscn")
 
 	# 4️⃣ Recapture the mouse for 3D control
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

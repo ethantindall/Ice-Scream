@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameSettings="*res://globalscripts/GameSettings.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 SceneManager="*res://globalscripts/SceneManager.gd"
+GoalManager="*res://globalscripts/GoalManager.gd"
 
 [editor]
 

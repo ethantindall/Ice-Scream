@@ -5,6 +5,7 @@ extends Node3D  # Root of the door
 @export var open_speed: float = 6.0
 @export var item_name: String = "Door"
 @export var locked: bool = false  # door can be locked
+@export var can_be_locked: bool = true
 
 var target_rotation: float = 0.0
 var closed_rotation: float = 0.0
@@ -33,7 +34,9 @@ func _physics_process(delta: float):
 
 # Optional helper to get display text
 func get_display_text() -> String:
-	var status := "Unlocked"
-	if locked:
-		status = "Locked"
-	return "%s - %s" % [item_name, status]
+	if can_be_locked:
+		var status := "Unlocked"
+		if locked:
+			status = "Locked"
+		return "%s - %s" % [item_name, status]
+	return item_name

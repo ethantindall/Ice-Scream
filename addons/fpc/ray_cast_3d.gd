@@ -76,6 +76,8 @@ func _input(event):
 		if interactable_node and interactable_node.has_method("do_homework"):
 			interactable_node.do_homework()
 			
+		if interactable_node and interactable_node.has_method("open_computer"):
+			interactable_node.open_computer()
 			
 		if pickup_node and pickup_node.has_method("pickup"):
 			pickup_node.pickup()
