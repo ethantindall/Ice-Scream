@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameSettings="*res://GameSettings.gd"
+GameSettings="*res://globalscripts/GameSettings.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+SceneManager="*res://globalscripts/SceneManager.gd"
 
 [editor]
 
@@ -41,6 +42,8 @@ interactable=""
 pickup=""
 hide=""
 door=""
+ladder=""
+desk=""
 
 [input]
 
